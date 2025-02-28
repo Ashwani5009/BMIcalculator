@@ -1,11 +1,13 @@
 package com.example.bmicalculator
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +18,9 @@ class MainActivity : AppCompatActivity() {
         val weightText = findViewById<EditText>(R.id.etWeight)
         val heightText = findViewById<EditText>(R.id.etHeight)
         val calcButton = findViewById<Button>(R.id.btnCalculate)
+        val cardView = findViewById<CardView>(R.id.cvResult)
 
+        cardView.visibility = View.INVISIBLE
         calcButton.setOnClickListener {
             val weight = weightText.text.toString()
             val height = heightText.text.toString()
@@ -24,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             if(validateInput(weight,height)){
                 val bmi = weight.toFloat() / ((height.toFloat() / 100) * (height.toFloat() / 100))
                 val bmi2digits = String.format("%.2f", bmi).toFloat()
+                cardView.visibility = View.VISIBLE
                 displayResult(bmi2digits)
             }
         }
