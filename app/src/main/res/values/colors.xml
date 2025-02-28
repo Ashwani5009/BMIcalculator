@@ -7,4 +7,9 @@
     <color name="card_background">#28425C</color>
     <color name="text_hint">#72788E</color>
     <color name="button_background">#EDB409</color>
+
+    <color name="under_weight">#E4B62E</color>
+    <color name="normal">#8BC34A</color>
+    <color name="over_weight">#F05A85</color>
+    <color name="obese">#DB072E</color>
 </resources>
